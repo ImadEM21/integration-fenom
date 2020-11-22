@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./assets/slick/slick-theme.css">
+    <link rel="stylesheet" href="./assets/stylesheet/css/styles.css" />
+    <title>FENOM</title>
+</head>
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="btnSearch" tabindex="-1" role="dialog" aria-labelledby="searchButton" aria-hidden="true" style="background-color: #666;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="input-group mx-0" style="justify-content: center;">
+                        <div class="input-group-prepend d-flex justify-content-between w-100 py-2">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="40" width="40">
+                                    <title>interface-search</title>
+                                    <g>
+                                      <circle cx="18.96" cy="18.96" r="6.96" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="23.88" y1="23.88" x2="28" y2="28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                    </g>
+                                  </svg>
+                            </span>
+                            <input type="text" class="form-control" placeholder="RECHERCHER UN MODÈLE" style="border: none;"/>
+                            <button type="button" class="close mr-2" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="container-fluid bg-color-footer d-none d-md-block">
+        <div class="row">
+            <div class="col">
+                <p class="text-muted text-center" style="font-size: smaller;">
+                    Livraison gratuite en France sur toutes vos commandes
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-none d-md-block">
+            <div class="col d-flex flex-row-reverse">
+                <span><a href="#" class="badge badge-light active">FR</a></span> 
+                <span><a href="#" class="badge badge-light text-muted">EN</a></span>
+            </div>
+        </div>
+        <div class="row d-md-none">
+                <header>
+                    <nav class="col navbar navbar-expand-lg navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" style="border: 0 white none;">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="30" width="70">
+                                    <title>interface-burger</title>
+                                    <g>
+                                      <line x1="8" y1="12" x2="32" y2="12" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="8" y1="20" x2="32" y2="20" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="8" y1="28" x2="20.8" y2="28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                    </g>
+                                  </svg>
+                            </span>
+                         </button>
+                         <div id="navbarContent" class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">NOUVEAUTÉS</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">HOMME</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">FEMME</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">LIFESTORE</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">SKATE</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">MARQUES</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link text-dark">OUTLET</a></li>
+                            </ul>
+                         </div>
+
+                        <a class="navbar-brand mx-4" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 33.53" height="30" width="70">
+                                <title>logo-header</title>
+                                <g>
+                                  <path d="M59.32,18.14,51.39,0H46.57v33.5H52V15.14l8,18.39h4.7V0H59.32Z"/>
+                                  <path d="M115,0l-5,9.92L105,0H99.83v33.5h5.47V12.92l3.33,6.61h2.64L114.53,13V33.53H120V0Z"/>
+                                  <path d="M88.17,0H76.46L74,2.45V31l2.54,2.54H88.09L90.62,31,90.56,2.42Zm-8.66,28V5.49H85.1l.05,22.57Z"/>
+                                  <path d="M28.66,28.06V19.53h6.59V14.06H28.66V5.49h8.55V0H25.73L23.2,2.56V31.05l2.47,2.48h11.6V28.06Z"/>
+                                  <g>
+                                    <rect x="5.47" y="14.06" width="6.61" height="5.47"/>
+                                    <rect y="19.53" width="5.47" height="14"/>
+                                    <path d="M14,5.47V0H2.52L0,2.52V14.06H5.47V5.47Z"/>
+                                  </g>
+                                </g>
+                              </svg>                              
+                        </a>
+
+                        <button type="button" class="btn mx-auto" data-toggle="modal" data-target="#btnSearch">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="25" width="25">
+                                <title>interface-search</title>
+                                <g>
+                                  <circle cx="18.96" cy="18.96" r="6.96" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                  <line x1="23.88" y1="23.88" x2="28" y2="28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                </g>
+                              </svg>
+                        </button>
+
+                        <button type="button" class="btn mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="25" width="30">
+                                <title>interface-shopping-cart</title>
+                                <rect x="9.71" y="14.71" width="20.57" height="16.29" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                <path d="M15.71,18.14V11.29a4.29,4.29,0,0,1,8.58,0v6.85" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                              </svg>
+                        </button>
+                    </nav>
+                </header>
+        </div>
+        <div class="row d-none d-md-block">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand mx-auto d-flex justify-content-between">
+                    <a class="navbar-brand" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 33.53" height="70" width="120">
+                            <title>logo-header</title>
+                            <g>
+                              <path d="M59.32,18.14,51.39,0H46.57v33.5H52V15.14l8,18.39h4.7V0H59.32Z"/>
+                              <path d="M115,0l-5,9.92L105,0H99.83v33.5h5.47V12.92l3.33,6.61h2.64L114.53,13V33.53H120V0Z"/>
+                              <path d="M88.17,0H76.46L74,2.45V31l2.54,2.54H88.09L90.62,31,90.56,2.42Zm-8.66,28V5.49H85.1l.05,22.57Z"/>
+                              <path d="M28.66,28.06V19.53h6.59V14.06H28.66V5.49h8.55V0H25.73L23.2,2.56V31.05l2.47,2.48h11.6V28.06Z"/>
+                              <g>
+                                <rect x="5.47" y="14.06" width="6.61" height="5.47"/>
+                                <rect y="19.53" width="5.47" height="14"/>
+                                <path d="M14,5.47V0H2.52L0,2.52V14.06H5.47V5.47Z"/>
+                              </g>
+                            </g>
+                          </svg> 
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">NOUVEAUTÉS</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">HOMME</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">FEMME</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">LIFESTORE</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">SKATE</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">MARQUES</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-dark">OUTLET</a></li>
+                        <li class="nav-item">
+                            <button type="button" class="btn" data-toggle="modal" data-target="#btnSearch">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="28" height="28">
+                                    <title>interface-search</title>
+                                    <g>
+                                      <circle cx="18.96" cy="18.96" r="6.96" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="23.88" y1="23.88" x2="28" y2="28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                    </g>
+                                  </svg>                                  
+                            </button> 
+                        </li>
+                    </ul>
+                    <div class="d-md-block">
+                        <button type="button" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="28" height="32">
+                                <title>interface-user</title>
+                                <g>
+                                  <path d="M26,15.31c0,4-2.27,8.12-6,8.12s-6-4.09-6-8.12S14.27,8,20,8,26,11.27,26,15.31Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                  <path d="M9.71,32c0-4.26.32-5.14,6.86-5.14h6.86c6.54,0,6.86.88,6.86,5.14" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                </g>
+                              </svg>
+                        </button>
+                        <button type="button" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="28" height="32">
+                                <title>interface-shopping-cart</title>
+                                <rect x="9.71" y="14.71" width="20.57" height="16.29" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                <path d="M15.71,18.14V11.29a4.29,4.29,0,0,1,8.58,0v6.85" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                              </svg>
+                        </button>
+                        <span>PANIER</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="d-none d-md-block">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb m-0 p-0 bg-white">
+                            <li class="breadcrumb-item"><a href="#" class="text-muted">Acceuil</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-muted">Homme</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-muted">Skate</a></li>
+                            <li class="breadcrumb-item active font-weight-bold" aria-current="page">Nike SB Dunk High Pro - Truck-it</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div id="carouselControls" class="carousel slide carousel-expand d-md-none" data-ride="carousel">
+                        <ol class="carousel-indicators mx-0 px-0" style="justify-content: flex-end;">
+                            <li data-target="#carouselControls" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselControls" data-slide-to="1"></li>
+                            <li data-target="#carouselControls" data-slide-to="2"></li>
+                            <li data-target="#carouselControls" data-slide-to="3"></li>
+                            <li data-target="#carouselControls" data-slide-to="4"></li>
+                            <li data-target="#carouselControls" data-slide-to="5"></li>
+                        </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/images/img-chaussure-1.jpg" alt="Chaussure Nike" class="d-block w-100"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/img-chaussure-2.jpg" alt="Chaussure Nike" class="d-block w-100"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/img-chaussure-3.jpg" alt="Chaussure Nike" class="d-block w-100"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/img-chaussure-4.jpg" alt="Chaussure Nike" class="d-block w-100"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/img-chaussure-5.jpg" alt="Chaussure Nike" class="d-block w-100"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./assets/images/img-chaussure-6.jpg" alt="Chaussure Nike" class="d-block w-100"/>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Précédent</span>
+                     </a>
+                     <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Suivant</span>
+                     </a>
+                </div>
+                <div class="d-none d-md-flex justify-content-between flex-wrap">
+                    <div class="images my-2"><img src="./assets/images/img-chaussure-1.jpg" alt="Chaussure Nike" width="100%" height="100%"/></div>
+                    <div class="images my-2"><img src="./assets/images/img-chaussure-2.jpg" alt="Chaussure Nike" width="100%" height="100%"/></div>
+                    <div class="images my-2"><img src="./assets/images/img-chaussure-3.jpg" alt="Chaussure Nike" width="100%" height="100%"/></div>
+                    <div class="images my-2"><img src="./assets/images/img-chaussure-4.jpg" alt="Chaussure Nike" width="100%" height="100%"/></div>
+                    <div class="images my-2"><img src="./assets/images/img-chaussure-5.jpg" alt="Chaussure Nike" width="100%" height="100%"/></div>
+                    <div class="images my-2"><img src="./assets/images/img-chaussure-6.jpg" alt="Chaussure Nike" width="100%" height="100%"/></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mt-5">
+                <h1 class="h1 mb-0 font-weight-bold">Nike SB Dunk High Pro - Truck-it</h1>
+                <div class="text-muted" style="font-size: smaller;">Référence : BQ6826-003</div><br />
+
+                <div class="d-block">
+                    <span class="d-inline mx-1 text-muted"><s>80,00€</s></span>
+                    <span class="d-inline mx-0 text-white p-1" style="background-color: black;">-10%</span> 
+                    <span class="d-inline mx-1 lead">75,00€</span>
+                </div>
+
+                <div class="size mx-2 text-muted mt-4">
+                    <p class="d-inline">TAILLE</p>
+                    <ul class="list-inline text-right ml-auto">
+                        <li class="list-inline-item active"><a href="#" class="text-dark">EU</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted">US</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted">UK</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-muted">CM</a></li>
+                    </ul>
+                </div>
+
+                <div class="size-numbers mb-3">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item active"><a href="#" class="text-dark link-deco">40</a></li>
+                        <li class="list-inline-item hover-border"><a href="#" class="text-dark link-deco">41</a></li>
+                        <li class="list-inline-item hover-border"><a href="#" class="text-dark link-deco">42</a></li>
+                        <li class="list-inline-item hover-border"><a href="#" class="text-dark link-deco">42.2</a></li>
+                        <li class="list-inline-item hover-border"><a href="#" class="text-dark link-deco">43</a></li>
+                        <li class="list-inline-item hover-border"><a href="#" class="text-dark link-deco">44</a></li>
+                    </ul>
+                </div>
+
+                <button type="button" class="btn btn-dark btn-block" style="border-radius: 0%; background-color: black;">Ajouter au panier</button>
+                
+                <div class="d-block my-3">
+                    <p class="text-muted">
+                        Cette Nike SB Dunk High Pro Black/Univeristy Gold appartient à la collection
+                    </p>
+                </div>
+
+                <div class="d-block">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item borders">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="30" width="40">
+                                    <title>insurance-2</title>
+                                    <g>
+                                      <rect x="11.71" y="13.64" width="18" height="14" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="5.71" y1="24.64" x2="13.71" y2="24.64" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="9.71" y1="21.64" x2="13.71" y2="21.64" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <polyline points="18.71 13.64 18.71 17.64 20.71 16.64 22.71 17.64 22.71 13.64" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                    </g>
+                                  </svg>
+                            </span>Livraison gratuite en France métropolitaine
+                        </li>
+                        <li class="list-group-item borders">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="30" width="40">
+                                    <title>insurance-5</title>
+                                    <g>
+                                      <circle cx="18.99" cy="21.33" r="10.67" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="18.99" y1="8" x2="18.99" y2="10.67" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="17.22" y1="8" x2="20.77" y2="8" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <polyline points="18.99 12.67 18.99 21.33 21.99 17.33" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="11.45" y1="13.79" x2="10.56" y2="12.9" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="26.53" y1="13.79" x2="27.42" y2="12.9" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                    </g>
+                                  </svg>
+                            </span>Expédition le jour même jusqu'à 13H
+                        </li>
+                        <li class="list-group-item borders">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="30" width="40">
+                                    <title>insurance-1</title>
+                                    <g>
+                                      <circle cx="20" cy="23.86" r="8.14" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <path d="M14.86,17.54v-4.4a5.14,5.14,0,0,1,10.28,0v4.4" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="22.42" y1="21.43" x2="17.58" y2="26.28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                      <line x1="17.58" y1="21.43" x2="22.42" y2="26.28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                                    </g>
+                                  </svg>
+                            </span>Paiement 100% sécurisé
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="mt-2">
+                    <span class="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.01 31.3" height="50" width="60">
+                            <title>logo-nike</title>
+                            <g>
+                              <polygon points="14.66 9.07 14.19 16.27 18.33 16.27 24.43 0 20.59 0 17.85 7.3 18.32 0 14.23 0 8.13 16.27 11.97 16.27 14.66 9.07"/>
+                              <polygon points="22.68 16.27 28.78 0 24.93 0 18.83 16.27 22.68 16.27"/>
+                              <path d="M59.58,9.74,42.44,14.38l.45-1.27H38.41l1.47-3.94h3.7l1.14-3H41l1.26-3.43h3.9l1-2.71H35.48l-4,4.88L33.31,0h-3.9L23.36,16.27h3.85l2.58-6.8.18,6.8h5.54L15.09,21.79c-5.63,1.58-12-1.86-7.4-11.13C2.31,17-2.76,25.37,1.72,29.23s9.76,1.53,13.46.05S59.75,10.06,59.75,10.06C60.15,9.86,60.07,9.61,59.58,9.74Zm-26-3L39.35.32,33.78,15.18Z"/>
+                            </g>
+                          </svg>
+                    </span> VOIR TOUS LES PRODUITS NIKE
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row my-5">
+            <div class="decoration1 d-none d-md-block"></div>
+            <div class="col-md-1 d-none d-md-block"></div>
+            <div class="col-12 col-md-11">
+                <div class="d-flex justify-content-between">
+                    <h4 class="h4 my-3 font-weight-bold">VOUS AIMEREZ AUSSI</h3>
+                    <div class="d-none d-md-flex flex-row-reverse my-3">
+                        <button class="next1"></button>
+                        <button class="prev1"></button>
+                        <a href="#" class="mx-4 text-dark">TOUT VOIR</a>
+                    </div>
+                </div>
+                <div class="slider variable1-width">
+                    <div class="card border-light mx-1 mb-2 suggestions">
+                        <img src="./assets/images/img-nike-1.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Zoom Blazer Mid - Photon</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                    <div class="card border-light mx-1 suggestions">
+                        <img src="./assets/images/img-nike-2.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Shane Black/White</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                    <div class="card border-light mx-1 suggestions">
+                        <img src="./assets/images/img-nike-3.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Air Zoom Bruin Edge</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                    <div class="card border-light mx-1 suggestions">
+                        <img src="./assets/images/img-nike-3.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Shane Summit White</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-md-none d-flex flex-row-reverse mt-1">
+                    <button class="next1"></button>
+                    <button class="prev1"></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-5">
+            <div class="decoration2 d-none d-md-block"></div>
+            <div class="col-md-1 d-none d-md-block"></div>
+            <div class="col-12 col-md-11">
+                <div class="d-flex justify-content-between">
+                    <h4 class="h4 my-3 font-weight-bold">DERNIERS ARTICLES CONSULTÉS</h3>
+                    <div class="d-none d-md-flex flex-row-reverse">
+                        <button class="next"></button>
+                        <button class="prev"></button>
+                        <a href="#" class="mx-4 text-dark">TOUT VOIR</a>
+                    </div>
+                </div>
+                <div class="slider variable-width">
+                    <div class="card border-light mx-1 mb-2 suggestions">
+                        <img src="./assets/images/img-adidas-1.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">ADIDAS</h5>
+                            <h6 class="card-subtitle text-muted">Matchbreak Super - Crystal</h6>
+                            <p class="card-text">75,00€</p>
+                        </div>
+                    </div>
+                    <div class="card border-light mx-1 suggestions">
+                        <img src="./assets/images/img-nike-3.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Air Zoom Bruin Edge</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                    <div class="card border-light mx-1 suggestions">
+                        <img src="./assets/images/img-nike-2.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Shane Black/White</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                    <div class="card border-light mx-1 suggestions">
+                        <img src="./assets/images/img-nike-3.png" alt="Chaussure Nike" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">NIKE</h5>
+                            <h6 class="card-subtitle text-muted">SB Shane Summit White</h6>
+                            <p class="card-text">85,00€</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex d-md-none flex-row-reverse mt-1 mb-3">
+                    <button class="next"></button>
+                    <button class="prev"></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-4">
+            <div class="col-6 col-md-3 px-0">
+                <div class="card text-center card-borders">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="card-img-top" height="50" width="50">
+                        <title>insurance-2</title>
+                        <g>
+                          <rect x="11.71" y="13.64" width="18" height="14" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <line x1="5.71" y1="24.64" x2="13.71" y2="24.64" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <line x1="9.71" y1="21.64" x2="13.71" y2="21.64" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <polyline points="18.71 13.64 18.71 17.64 20.71 16.64 22.71 17.64 22.71 13.64" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                        </g>
+                      </svg>
+                      <div class="card-body">
+                          <h5 class="card-title">Livraison gratuite</h5>
+                          <p class="card-text text-muted">Livraison gratuite en France métropolitaine</p>
+                      </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 px-0">
+                <div class="card text-center card-borders">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="card-img-top" height="50" width="50">
+                        <title>insurance-1</title>
+                        <g>
+                          <circle cx="20" cy="23.86" r="8.14" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <path d="M14.86,17.54v-4.4a5.14,5.14,0,0,1,10.28,0v4.4" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <line x1="22.42" y1="21.43" x2="17.58" y2="26.28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <line x1="17.58" y1="21.43" x2="22.42" y2="26.28" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                        </g>
+                      </svg>
+                      <div class="card-body">
+                          <h5 class="card-title">Paiement sécurisé</h5>
+                          <p class="card-text text-muted">Paiement 100% sécurisé Visa, Mastercard, Paypal</p>
+                      </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 px-0">
+                <div class="card text-center card-borders">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="card-img-top" height="50" width="50">
+                        <title>insurance-4</title>
+                        <g>
+                          <polyline points="27.2 17.6 27.2 10.4 8 10.4 8 23.2 11.84 23.2 11.84 26.4 15.04 23.2 17.6 23.2" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <polygon points="26.72 27.2 17.6 27.2 17.6 17.6 32 17.6 32 27.2 29.12 27.2 29.12 29.6 26.72 27.2" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                        </g>
+                      </svg>
+                      <div class="card-body">
+                          <h5 class="card-title">Service client</h5>
+                          <p class="card-text text-muted">
+                              Une question ?<br />
+                              Besoin d'un conseil ?<br />
+                              01 84 60 90 20 ou par mail
+                          </p>
+                      </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 px-0">
+                <div class="card text-center card-borders">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" class="card-img-top" height="50" width="50">
+                        <title>insurance-3</title>
+                        <g>
+                          <line x1="14.4" y1="27.2" x2="30.4" y2="27.2" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <polyline points="25.6 22.4 30.4 27.2 25.6 32" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <line x1="25.6" y1="17.2" x2="9.6" y2="17.2" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                          <polyline points="14.4 22 9.6 17.2 14.4 12.4" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.6"/>
+                        </g>
+                      </svg>
+                      <div class="card-body">
+                          <h5 class="card-title">Retour</h5>
+                          <p class="card-text text-muted">Vous bénéficiez de 15 jours pour changer d'avis</p>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-footer mt-4">
+        <div class="container-fluid">
+            <div class="row px-md-4">
+                <div class="col-12 d-block d-md-none">
+                    <ul class="list-group list-group-flush d-md-flex justify-content-md-between" style="font-size: small;">
+                        <li class="list-group-item bg-color-footer d-md-none"></li>
+                        <li class="list-group-item bg-color-footer d-flex d-md-block">
+                            <span class="d-inline">SHOP</span><button type="button" class="btn dropdown-toggle dropdown-toggle-split ml-auto pos-relative d-inline d-md-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">Homme</li>
+                                <li class="dropdown-item">Femme</li>
+                                <li class="dropdown-item">Lifestore</li>
+                                <li class="dropdown-item">Marques</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item bg-color-footer d-flex d-md-block">
+                            <span class="d-inline">SAV</span><button type="button" class="btn dropdown-toggle dropdown-toggle-split ml-auto pos-relative d-inline d-md-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">Livraison</li>
+                                <li class="dropdown-item">Retour</li>
+                                <li class="dropdown-item">Paiement</li>
+                                <li class="dropdown-item">FAQ</li>
+                                <li class="dropdown-item">CGV</li>
+                                <li class="dropdown-item">Infos persos</li>
+                                <li class="dropdown-item">Mentions</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item bg-color-footer d-flex d-md-block">
+                            <span class="d-inline">À PROPOS</span><button type="button" class="btn dropdown-toggle dropdown-toggle-split ml-auto pos-relative d-inline d-md-none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">Features</li>
+                                <li class="dropdown-item">Qui sommes nous</li>
+                                <li class="dropdown-item">Travailler avec Fenom</li>
+                                <li class="dropdown-item">Contact</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-7 d-none d-md-flex justify-content-around pt-4">
+                    <div>
+                        <h6>Shop</h6>
+                        <ul class="list-unstyled text-smaller">
+                            <li><a class="text-muted" href="#">Homme</a></li>
+                            <li><a class="text-muted" href="#">Femme</a></li>
+                            <li><a class="text-muted" href="#">Lifestore</a></li>
+                            <li><a class="text-muted" href="#">Marques</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6>SAV</h6>
+                        <ul class="list-unstyled text-smaller">
+                            <li><a class="text-muted" href="#">Livraison</a></li>
+                            <li><a class="text-muted" href="#">Retour</a></li>
+                            <li><a class="text-muted" href="#">Paiement</a></li>
+                            <li><a class="text-muted" href="#">FAQ</a></li>
+                            <li><a class="text-muted" href="#">CGV</a></li>
+                            <li><a class="text-muted" href="#">Infos persos</a></li>
+                            <li><a class="text-muted" href="#">Mentions</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h6>À Propos</h6>
+                        <ul class="list-unstyled text-smaller">
+                            <li><a class="text-muted" href="#">Features</a></li>
+                            <li><a class="text-muted" href="#">Qui sommes nous</a></li>
+                            <li><a class="text-muted" href="#">Travailler avec Fenom</a></li>
+                            <li><a class="text-muted" href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <h4 class="font-weight-bold mt-5">Suivez-nous pour ne rien manquer !</h3>
+                    <p class="text-muted" style="font-size: small;">
+                        Recevez toutes les infos sur les prochaines sorties,
+                        offres et actualités de la boutique Fenom
+                    </p>
+                    <div class="input-group mt-3">
+                        <input type="email" class="form-control" placeholder="Inscrivez votre email">
+                        <span class="input-group-btn">
+                          <button class="btn btn-dark" type="button" style="border-radius: 0%; background-color: black;">S'INSCRIRE</button>
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-md-end mt-4">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="40" width="40">
+                                    <title>network-facebook</title>
+                                    <path d="M20,6.09a14,14,0,0,0-2.19,27.82V24.13H14.26v-4h3.55V17c0-3.51,2.09-5.45,5.29-5.45a21,21,0,0,1,3.13.28v3.44H24.47a2,2,0,0,0-2.28,2.19v2.63h3.88l-.62,4H22.19v9.78A14,14,0,0,0,20,6.09Z"/>
+                                </svg>
+                            </span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="40" width="40">
+                                    <title>network-instagram</title>
+                                    <g>
+                                    <path d="M20,8.52c3.74,0,4.18,0,5.66.08a7.75,7.75,0,0,1,2.6.49,4.56,4.56,0,0,1,2.65,2.65,7.75,7.75,0,0,1,.49,2.6c.06,1.48.08,1.92.08,5.66s0,4.18-.08,5.66a7.75,7.75,0,0,1-.49,2.6,4.56,4.56,0,0,1-2.65,2.65,7.75,7.75,0,0,1-2.6.49c-1.48.06-1.92.08-5.66.08s-4.18,0-5.66-.08a7.75,7.75,0,0,1-2.6-.49,4.56,4.56,0,0,1-2.65-2.65,7.75,7.75,0,0,1-.49-2.6c-.06-1.48-.08-1.92-.08-5.66s0-4.18.08-5.66a7.75,7.75,0,0,1,.49-2.6,4.56,4.56,0,0,1,2.65-2.65,7.75,7.75,0,0,1,2.6-.49c1.48-.06,1.92-.08,5.66-.08M20,6c-3.8,0-4.28,0-5.77.08a10.5,10.5,0,0,0-3.4.65,7.21,7.21,0,0,0-4.1,4.1,10.5,10.5,0,0,0-.65,3.4C6,15.72,6,16.2,6,20s0,4.28.08,5.77a10.5,10.5,0,0,0,.65,3.4,7.21,7.21,0,0,0,4.1,4.1,10.5,10.5,0,0,0,3.4.65c1.49.06,2,.08,5.77.08s4.28,0,5.77-.08a10.5,10.5,0,0,0,3.4-.65,7.21,7.21,0,0,0,4.1-4.1,10.5,10.5,0,0,0,.65-3.4C34,24.28,34,23.8,34,20s0-4.28-.08-5.77a10.5,10.5,0,0,0-.65-3.4,7.21,7.21,0,0,0-4.1-4.1,10.5,10.5,0,0,0-3.4-.65C24.28,6,23.8,6,20,6Z"/>
+                                    <path d="M20,12.81A7.19,7.19,0,1,0,27.19,20,7.19,7.19,0,0,0,20,12.81Zm0,11.86A4.67,4.67,0,1,1,24.67,20,4.67,4.67,0,0,1,20,24.67Z"/>
+                                    <circle cx="27.47" cy="12.53" r="1.68"/>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="40" width="40">
+                                    <title>network-twitter</title>
+                                    <path d="M34,11.32a11.76,11.76,0,0,1-3.3.9A5.76,5.76,0,0,0,33.23,9a11.53,11.53,0,0,1-3.65,1.4,5.74,5.74,0,0,0-9.94,3.93,5.66,5.66,0,0,0,.15,1.31A16.3,16.3,0,0,1,8,9.67a5.68,5.68,0,0,0-.78,2.89,5.75,5.75,0,0,0,2.56,4.78,5.59,5.59,0,0,1-2.6-.72v.08a5.75,5.75,0,0,0,4.61,5.63,5.79,5.79,0,0,1-1.51.2,5.49,5.49,0,0,1-1.08-.1,5.75,5.75,0,0,0,5.36,4,11.51,11.51,0,0,1-7.13,2.46A12.44,12.44,0,0,1,6,28.8a16.25,16.25,0,0,0,8.81,2.58c10.56,0,16.34-8.76,16.34-16.35,0-.25,0-.49,0-.74A11.58,11.58,0,0,0,34,11.32Z"/>
+                                </svg>
+                            </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 my-3">
+                    <div class="d-flex justify-content-center">
+                        <img src="./assets/images/fenom-footer.svg" alt="Fenom Logo" width="95" height="150" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <img src="./assets/images/paiement-livraison.svg" alt="Moyens de paiement" width="200" height="70" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="./assets/js/sliders.js"></script>
+</body>
+</html>
